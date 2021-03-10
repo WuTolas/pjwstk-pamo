@@ -3,4 +3,7 @@
     <string name="t_weight">Waga (kg):</string>
     <string name="t_height">Wzrost (m):</string>
     <string name="t_bmi">BMI:</string>
+    <string name="t_count">Oblicz</string>
+    <string name="e_fieldEmpty">Pole nie może być puste</string>
+    <string name="e_fieldPositive">Pole powinno być dodatnie</string>
 </resources>
