@@ -3,4 +3,13 @@
     <string name="t_weight">Waga (kg):</string>
     <string name="t_height">Wzrost (m):</string>
     <string name="t_bmi">BMI:</string>
+    <string name="t_count">Oblicz</string>
+    <string name="t_clear">Wyczyść</string>
+    <string name="e_fieldEmpty">Pole nie może być puste</string>
+    <string name="e_fieldPositive">Wartość powinna być dodatnia</string>
+    <string name="t_underweight">Niedowaga</string>
+    <string name="t_correctValue">Wartość prawidłowa</string>
+    <string name="t_overweight">Nadwaga</string>
+    <string name="t_obesity">Otyłość</string>
+    <string name="t_extremeObesity">Otyłość skrajna</string>
 </resources>
