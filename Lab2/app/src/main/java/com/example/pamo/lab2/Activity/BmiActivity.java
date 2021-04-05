@@ -1,18 +1,21 @@
-package com.example.pamo.lab2;
+package com.example.pamo.lab2.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.RadioButton;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.EditText;
-import android.widget.Button;
+
+import com.example.pamo.lab2.BmiResultType;
+import com.example.pamo.lab2.FitCalculator;
+import com.example.pamo.lab2.Gender;
+import com.example.pamo.lab2.R;
 
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity {
+public class BmiActivity extends AppCompatActivity {
 
     private EditText editWeight;
     private EditText editHeight;
@@ -27,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_bmi);
         initializeComponents();
 
         clearButton.setOnClickListener(V -> clearValues());

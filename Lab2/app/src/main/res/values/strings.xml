@@ -8,6 +8,7 @@
     <string name="t_female">Kobieta</string>
     <string name="t_neededCalories">Zapotrzebowanie na kalorie (kcal):</string>
     <string name="t_bmi">BMI:</string>
+    <string name="t_bmi_calculator">Kalkulator BMI</string>
     <string name="t_count">Oblicz</string>
     <string name="t_clear">Wyczyść</string>
     <string name="e_fieldEmpty">Pole nie może być puste</string>
