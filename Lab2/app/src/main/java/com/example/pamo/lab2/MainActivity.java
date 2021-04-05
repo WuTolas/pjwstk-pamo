@@ -3,6 +3,9 @@ package com.example.pamo.lab2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.EditText;
 import android.widget.Button;
@@ -13,12 +16,13 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText editWeight;
     private EditText editHeight;
+    private EditText editAge;
+    private RadioGroup editGender;
     private TextView bmiValueOutput;
     private TextView bmiTypeOutput;
+    private TextView caloriesNeedOutput;
     private Button countButton;
     private Button clearButton;
-
-    private BmiCalculator bmiCalculator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,24 +37,30 @@ public class MainActivity extends AppCompatActivity {
     private void initializeComponents() {
         bmiValueOutput = findViewById(R.id.bmiValueOutput);
         bmiTypeOutput = findViewById(R.id.bmiTypeOutput);
+        editGender = findViewById(R.id.genderRadioGroup);
+        editGender.check(R.id.maleRadio);
+        caloriesNeedOutput = findViewById(R.id.caloriesNeedOutput);
         editWeight = findViewById(R.id.editWeight);
         editHeight = findViewById(R.id.editHeight);
+        editAge = findViewById(R.id.editAge);
         countButton = findViewById(R.id.countButton);
         clearButton = findViewById(R.id.clearButton);
-
-        bmiCalculator = new BmiCalculator();
     }
 
     private void prepareCalculatedOutput() {
         if (isValidated()) {
-            bmiCalculator.setWeight(Double.parseDouble(editWeight.getText().toString()));
-            bmiCalculator.setHeight(Double.parseDouble(editHeight.getText().toString()));
-            double bmiValue = bmiCalculator.calculateBmi();
+            double weight = Double.parseDouble(editWeight.getText().toString());
+            double height = Double.parseDouble(editHeight.getText().toString());
+            Gender gender = getGender();
+            int age = Integer.parseInt(editAge.getText().toString());
+            double bmi = FitCalculator.calculateBmi(weight, height);
+            int calories = FitCalculator.calculateBodyCaloriesNeed(weight, height, gender, age);
 
-            BmiResultType bmiType = BmiResultType.getBmiResultByValue(bmiValue);
-            bmiValueOutput.setText(String.format(Locale.getDefault(), "%f", bmiValue));
+            BmiResultType bmiType = BmiResultType.getBmiResultByValue(bmi);
+            bmiValueOutput.setText(String.format(Locale.getDefault(), "%.2f", bmi));
             bmiTypeOutput.setText(bmiType.getResourceId());
             bmiTypeOutput.setTextColor(getResources().getColor(bmiType.getColorId(), null));
+            caloriesNeedOutput.setText(String.format(Locale.getDefault(), "%d", calories));
         } else {
             clearResult();
         }
@@ -58,33 +68,72 @@ public class MainActivity extends AppCompatActivity {
 
     private void clearValues() {
         editWeight.setText(null);
+        editWeight.setError(null);
         editHeight.setText(null);
+        editHeight.setError(null);
+        editAge.setText(null);
+        editAge.setError(null);
         clearResult();
 
-        editWeight.requestFocus();
+        editAge.requestFocus();
     }
 
     private void clearResult() {
         bmiValueOutput.setText(null);
         bmiTypeOutput.setText(null);
+        caloriesNeedOutput.setText(null);
+    }
+
+    private Gender getGender() {
+        int selectedRadioId = editGender.getCheckedRadioButtonId();
+        Gender selectedGender = null;
+        if (selectedRadioId == R.id.maleRadio) {
+            selectedGender = Gender.MALE;
+        } else if (selectedRadioId == R.id.femaleRadio) {
+            selectedGender = Gender.FEMALE;
+        }
+        return selectedGender;
     }
 
     private boolean isValidated() {
         int errorsCount = 0;
 
-        if (editWeight.getText().toString().isEmpty()) {
-            editWeight.setError(getString(R.string.e_fieldEmpty));
-            errorsCount++;
-        } else if (Double.parseDouble(editWeight.getText().toString()) <= 0) {
-            editWeight.setError(getString(R.string.e_fieldPositive));
+        try {
+            if (editWeight.getText().toString().isEmpty()) {
+                editWeight.setError(getString(R.string.e_fieldEmpty));
+                errorsCount++;
+            } else if (Double.parseDouble(editWeight.getText().toString()) <= 0) {
+                editWeight.setError(getString(R.string.e_fieldPositive));
+                errorsCount++;
+            }
+        } catch (NumberFormatException ex) {
+            editWeight.setError(getString(R.string.e_notNumber));
             errorsCount++;
         }
 
-        if (editHeight.getText().toString().isEmpty()) {
-            editHeight.setError(getString(R.string.e_fieldEmpty));
+        try {
+            if (editHeight.getText().toString().isEmpty()) {
+                editHeight.setError(getString(R.string.e_fieldEmpty));
+                errorsCount++;
+            } else if (Double.parseDouble(editHeight.getText().toString()) <= 0) {
+                editHeight.setError(getString(R.string.e_fieldPositive));
+                errorsCount++;
+            }
+        } catch (NumberFormatException ex) {
+            editHeight.setError(getString(R.string.e_notNumber));
             errorsCount++;
-        } else if (Double.parseDouble(editHeight.getText().toString()) <= 0) {
-            editHeight.setError(getString(R.string.e_fieldPositive));
+        }
+
+        try {
+            if (editAge.getText().toString().isEmpty()) {
+                editAge.setError(getString(R.string.e_fieldEmpty));
+                errorsCount++;
+            } else if (Integer.parseInt(editAge.getText().toString()) <= 0) {
+                editAge.setError(getString(R.string.e_fieldPositive));
+                errorsCount++;
+            }
+        } catch (NumberFormatException ex) {
+            editAge.setError(getString(R.string.e_notNumber));
             errorsCount++;
         }
 

@@ -2,11 +2,17 @@
     <string name="app_name">lab2 - Kalkulator BMI</string>
     <string name="t_weight">Waga (kg):</string>
     <string name="t_height">Wzrost (m):</string>
+    <string name="t_age">Wiek:</string>
+    <string name="t_gender">Płeć:</string>
+    <string name="t_male">Mężczyzna</string>
+    <string name="t_female">Kobieta</string>
+    <string name="t_neededCalories">Zapotrzebowanie na kalorie (kcal):</string>
     <string name="t_bmi">BMI:</string>
     <string name="t_count">Oblicz</string>
     <string name="t_clear">Wyczyść</string>
     <string name="e_fieldEmpty">Pole nie może być puste</string>
     <string name="e_fieldPositive">Wartość powinna być dodatnia</string>
+    <string name="e_notNumber">Podana wartość nie jest liczbą</string>
     <string name="t_underweight">Niedowaga</string>
     <string name="t_correctValue">Wartość prawidłowa</string>
     <string name="t_overweight">Nadwaga</string>
