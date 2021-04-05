@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">lab2 - Kalkulator BMI</string>
+    <string name="app_name">Lab2</string>
     <string name="t_weight">Waga (kg):</string>
     <string name="t_height">Wzrost (m):</string>
     <string name="t_age">Wiek:</string>

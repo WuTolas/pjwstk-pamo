@@ -9,14 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.lab2">
-        <activity android:name=".Activity.MainActivity" android:label="Strona główna">
+        <activity android:name=".Activity.SplashActivity" android:theme="@style/Theme.Transparent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.BmiActivity" android:label="Kalkulator BMI"></activity>
+        <activity
+            android:name=".Activity.MainActivity"
+            android:label="Strona główna">
+        </activity>
+        <activity
+            android:name=".Activity.BmiActivity"
+            android:label="Kalkulator BMI" />
     </application>
 
 </manifest>
