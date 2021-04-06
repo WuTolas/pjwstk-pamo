@@ -10,6 +10,7 @@
     <string name="t_bmi">BMI:</string>
     <string name="t_bmi_calculator">Kalkulator BMI</string>
     <string name="t_count">Oblicz</string>
+    <string name="t_proposedFood">Proponowane jedzenie:</string>
     <string name="t_clear">Wyczyść</string>
     <string name="e_fieldEmpty">Pole nie może być puste</string>
     <string name="e_fieldPositive">Wartość powinna być dodatnia</string>
@@ -19,4 +20,5 @@
     <string name="t_overweight">Nadwaga</string>
     <string name="t_obesity">Otyłość</string>
     <string name="t_extremeObesity">Otyłość skrajna</string>
+    <string name="d_proposedFood">Zdjęcie proponowanego jedzenia</string>
 </resources>

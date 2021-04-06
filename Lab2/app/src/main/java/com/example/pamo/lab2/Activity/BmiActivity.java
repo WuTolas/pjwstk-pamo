@@ -2,9 +2,13 @@ package com.example.pamo.lab2.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
@@ -13,6 +17,7 @@ import com.example.pamo.lab2.FitCalculator;
 import com.example.pamo.lab2.Gender;
 import com.example.pamo.lab2.R;
 
+import java.io.InputStream;
 import java.util.Locale;
 
 public class BmiActivity extends AppCompatActivity {
@@ -24,6 +29,7 @@ public class BmiActivity extends AppCompatActivity {
     private TextView bmiValueOutput;
     private TextView bmiTypeOutput;
     private TextView caloriesNeedOutput;
+    private ImageView proposedFoodOutput;
     private Button countButton;
     private Button clearButton;
 
@@ -48,6 +54,7 @@ public class BmiActivity extends AppCompatActivity {
         editAge = findViewById(R.id.editAge);
         countButton = findViewById(R.id.countButton);
         clearButton = findViewById(R.id.clearButton);
+        proposedFoodOutput = findViewById(R.id.proposedFood);
     }
 
     private void prepareCalculatedOutput() {
@@ -64,6 +71,7 @@ public class BmiActivity extends AppCompatActivity {
             bmiTypeOutput.setText(bmiType.getResourceId());
             bmiTypeOutput.setTextColor(getResources().getColor(bmiType.getColorId(), null));
             caloriesNeedOutput.setText(String.format(Locale.getDefault(), "%d", calories));
+            proposedFoodOutput.setImageBitmap(getFoodBitmapFromAsset(bmiType));
         } else {
             clearResult();
         }
@@ -85,6 +93,24 @@ public class BmiActivity extends AppCompatActivity {
         bmiValueOutput.setText(null);
         bmiTypeOutput.setText(null);
         caloriesNeedOutput.setText(null);
+        proposedFoodOutput.setImageBitmap(null);
+    }
+
+    private Bitmap getFoodBitmapFromAsset(BmiResultType bmiType) {
+        String bmiName = bmiType.toString().toLowerCase();
+        String foodLocation = "food/" + bmiName;
+        Bitmap result = null;
+        try {
+            String[] files = getAssets().list(foodLocation);
+            int filePos = (int) (Math.random() * files.length);
+            String pickedFood = foodLocation + "/" + files[filePos];
+            InputStream in = getAssets().open(pickedFood);
+            result = BitmapFactory.decodeStream(in);
+            in.close();
+        } catch (Exception ex) {
+
+        }
+        return result;
     }
 
     private Gender getGender() {

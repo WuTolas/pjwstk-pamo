@@ -1,7 +1,5 @@
 package com.example.pamo.lab2;
 
-import android.graphics.Color;
-
 import java.util.stream.Stream;
 
 public enum BmiResultType {
