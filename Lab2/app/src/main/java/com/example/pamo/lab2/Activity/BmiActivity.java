@@ -6,6 +6,7 @@ import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -108,7 +109,7 @@ public class BmiActivity extends AppCompatActivity {
             result = BitmapFactory.decodeStream(in);
             in.close();
         } catch (Exception ex) {
-
+            Log.w(this.getClass().getName(), "Couldn't get the picture.");
         }
         return result;
     }

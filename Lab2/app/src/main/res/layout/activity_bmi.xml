@@ -47,6 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0"
+            android:labelFor="@id/editAge"
             android:text="@string/t_age" />
 
         <EditText
@@ -57,13 +58,15 @@
             android:layout_weight="0"
             android:ems="10"
             android:gravity="start"
-            android:inputType="number" />
+            android:inputType="number"
+            android:importantForAutofill="no" />
 
         <TextView
             android:id="@+id/textWeight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0"
+            android:labelFor="@id/editWeight"
             android:text="@string/t_weight" />
 
         <EditText
@@ -74,13 +77,15 @@
             android:layout_weight="0"
             android:ems="10"
             android:gravity="start"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+            android:importantForAutofill="no" />
 
         <TextView
             android:id="@+id/textHeight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0"
+            android:labelFor="@id/editHeight"
             android:text="@string/t_height" />
 
         <EditText
@@ -91,7 +96,8 @@
             android:layout_weight="0"
             android:ems="10"
             android:gravity="start"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+            android:importantForAutofill="no" />
 
         <TextView
             android:id="@+id/textBmi"
@@ -170,7 +176,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="15dp"
                 android:layout_gravity="center"
-                android:text="@string/t_clear" />
+                android:text="@string/t_clear"
+                tools:ignore="ButtonStyle" />
 
             <Button
                 android:id="@+id/countButton"
@@ -178,7 +185,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_gravity="center"
-                android:text="@string/t_count" />
+                android:text="@string/t_count"
+                tools:ignore="ButtonStyle" />
 
         </LinearLayout>
 
