@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.BmiActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/textWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:labelFor="@id/editWeight"
+            android:text="@string/t_weight" />
+
+        <EditText
+            android:id="@+id/editWeight"
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="0"
+            android:ems="10"
+            android:gravity="start"
+            android:inputType="numberDecimal"
+            android:importantForAutofill="no" />
+
+        <TextView
+            android:id="@+id/textHeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:labelFor="@id/editHeight"
+            android:text="@string/t_height" />
+
+        <EditText
+            android:id="@+id/editHeight"
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="0"
+            android:ems="10"
+            android:gravity="start"
+            android:inputType="numberDecimal"
+            android:importantForAutofill="no" />
+
+        <TextView
+            android:id="@+id/textBmi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="0"
+            android:text="@string/t_bmi" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/bmiValueOutput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=""
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/bmiTypeOutput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=""
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textProposedFood"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="0"
+            android:text="@string/t_proposedFood" />
+
+        <ImageView
+            android:id="@+id/proposedFood"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="30dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/d_proposedFood"/>
+
+        <Button
+            android:id="@+id/countButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center"
+            android:text="@string/t_count"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/clearButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_gravity="center"
+            android:text="@string/t_clear"
+            tools:ignore="ButtonStyle" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
