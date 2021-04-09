@@ -16,6 +16,53 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <TextView
+            android:id="@+id/textGender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="@string/t_gender" />
+
+        <RadioGroup
+            android:id="@+id/genderRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/maleRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/t_male" />
+
+            <RadioButton
+                android:id="@+id/femaleRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/t_female" />
+
+        </RadioGroup>
+
+
+        <TextView
+            android:id="@+id/textAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:labelFor="@id/editAge"
+            android:text="@string/t_age" />
+
+        <EditText
+            android:id="@+id/editAge"
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="0"
+            android:ems="10"
+            android:gravity="start"
+            android:inputType="number"
+            android:importantForAutofill="no" />
+
+        <TextView
             android:id="@+id/textWeight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -54,52 +101,21 @@
             android:importantForAutofill="no" />
 
         <TextView
-            android:id="@+id/textBmi"
+            android:id="@+id/textNeededCalories"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:layout_weight="0"
-            android:text="@string/t_bmi" />
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal"
-            android:weightSum="2">
-
-            <TextView
-                android:id="@+id/bmiValueOutput"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text=""
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/bmiTypeOutput"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text=""
-                android:textSize="18sp" />
-
-        </LinearLayout>
+            android:text="@string/t_neededCalories" />
 
         <TextView
-            android:id="@+id/textProposedFood"
+            android:id="@+id/caloriesNeedOutput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="40dp"
             android:layout_weight="0"
-            android:text="@string/t_proposedFood" />
-
-        <ImageView
-            android:id="@+id/proposedFood"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginBottom="30dp"
-            android:layout_gravity="center"
-            android:contentDescription="@string/d_proposedFood"/>
+            android:text=""
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/countButton"
@@ -121,6 +137,7 @@
             android:layout_gravity="center"
             android:text="@string/t_clear"
             tools:ignore="ButtonStyle" />
+
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

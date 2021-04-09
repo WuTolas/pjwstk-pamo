@@ -21,4 +21,9 @@
     <string name="t_obesity">Otyłość</string>
     <string name="t_extremeObesity">Otyłość skrajna</string>
     <string name="d_proposedFood">Zdjęcie proponowanego jedzenia</string>
+    <string name="t_bmr_calculator">Kalkulator BMR</string>
+    <string name="key_weight">key_weight</string>
+    <string name="key_height">key_height</string>
+    <string name="key_age">key_age</string>
+    <string name="key_gender">key_gender</string>
 </resources>
