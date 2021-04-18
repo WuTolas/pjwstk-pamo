@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.pamo.lab3">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +11,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.lab3">
-        <activity android:name=".Activity.ChartActivity"></activity>
         <activity
             android:name=".Activity.SplashActivity"
             android:theme="@style/Theme.Transparent">
@@ -28,6 +29,12 @@
         <activity
             android:name=".Activity.BmrActivity"
             android:label="Kalkulator kalorii" />
+        <activity
+            android:name=".Activity.ChartActivity"
+            android:label="Koronawirus Polska" />
+        <activity
+            android:name=".Activity.QuizActivity"
+            android:label="Quiz dietetyczny"/>
     </application>
 
 </manifest>

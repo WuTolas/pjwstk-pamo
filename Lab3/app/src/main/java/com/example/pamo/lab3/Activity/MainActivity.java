@@ -15,11 +15,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button bmiActivityButton = (Button) findViewById(R.id.bt_activity_bmi);
+        Button bmiActivityButton = findViewById(R.id.bt_activity_bmi);
         bmiActivityButton.setOnClickListener(V -> launchActivity(BmiActivity.class));
 
-        Button bmrActivityButton = (Button) findViewById(R.id.bt_activity_bmr);
+        Button bmrActivityButton = findViewById(R.id.bt_activity_bmr);
         bmrActivityButton.setOnClickListener(V -> launchActivity(BmrActivity.class));
+
+        Button chartActivityButton = findViewById(R.id.bt_activity_chart);
+        chartActivityButton.setOnClickListener(V -> launchActivity(ChartActivity.class));
+
+        Button quizActivityButton = findViewById(R.id.bt_activity_quiz);
+        quizActivityButton.setOnClickListener(V -> launchActivity(QuizActivity.class));
     }
 
     private void launchActivity(Class<? extends AppCompatActivity> activity) {

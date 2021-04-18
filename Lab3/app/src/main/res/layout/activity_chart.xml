@@ -15,6 +15,10 @@
         android:layout_marginRight="10dp"
         app:layout_constraintBottom_toBottomOf="parent">
 
+        <org.adblockplus.libadblockplus.android.webview.AdblockWebView
+            android:id="@+id/webview_chart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
 
     </LinearLayout>
