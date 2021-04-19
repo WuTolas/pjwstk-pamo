@@ -34,4 +34,5 @@
     <string name="t_quiz_reset">Reset quizu</string>
     <string name="t_next">Dalej</string>
     <string name="t_summary">Podsumowanie</string>
+    <string name="t_summary_score">Udało Ci się zdobyć %1$d / %2$d punktów</string>
 </resources>

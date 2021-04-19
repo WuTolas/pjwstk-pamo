@@ -1,4 +1,4 @@
-package com.example.pamo.lab3.Activity;
+package com.example.pamo.lab3.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 

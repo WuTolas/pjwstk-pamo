@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.lab3">
         <activity
-            android:name=".Activity.SplashActivity"
+            android:name=".activity.SplashActivity"
             android:theme="@style/Theme.Transparent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,19 +21,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activity.MainActivity"
+            android:name=".activity.MainActivity"
             android:label="Strona główna" />
         <activity
-            android:name=".Activity.BmiActivity"
+            android:name=".activity.BmiActivity"
             android:label="Kalkulator BMI" />
         <activity
-            android:name=".Activity.BmrActivity"
+            android:name=".activity.BmrActivity"
             android:label="Kalkulator kalorii" />
         <activity
-            android:name=".Activity.ChartActivity"
+            android:name=".activity.ChartActivity"
             android:label="Koronawirus Polska" />
         <activity
-            android:name=".Activity.QuizActivity"
+            android:name=".activity.QuizActivity"
             android:label="Quiz dietetyczny"/>
     </application>
 

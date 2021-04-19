@@ -1,11 +1,11 @@
-package com.example.pamo.lab3.Activity;
+package com.example.pamo.lab3.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
 
-import com.example.pamo.lab3.QuizFragment;
+import com.example.pamo.lab3.fragment.QuizFragment;
 import com.example.pamo.lab3.R;
 import com.example.pamo.lab3.quiz.Quiz;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -38,7 +38,8 @@ public class QuizActivity extends AppCompatActivity {
 
             getSupportFragmentManager().beginTransaction()
                     .setReorderingAllowed(true)
-                    .add(R.id.fragment_quiz_view, QuizFragment.class, bundle)
+                    .add(R.id.fragment_quiz_view, QuizFragment.class, bundle, "QUIZ_FRAGMENT")
+                    .addToBackStack(null)
                     .commit();
         }
 

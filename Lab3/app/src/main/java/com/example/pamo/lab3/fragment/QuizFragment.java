@@ -1,4 +1,4 @@
-package com.example.pamo.lab3;
+package com.example.pamo.lab3.fragment;
 
 import android.os.Bundle;
 
@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.pamo.lab3.R;
 import com.example.pamo.lab3.quiz.Answer;
 import com.example.pamo.lab3.quiz.Question;
 import com.example.pamo.lab3.quiz.Quiz;
@@ -25,7 +26,6 @@ public class QuizFragment extends Fragment {
     private static final String QUIZ_PARAM = "quiz";
 
     private final List<Button> answerButtons = new ArrayList<>();
-    private Button resetButton;
     private Button nextButton;
     private Button summaryButton;
     private TextView questionCounterView;
@@ -34,6 +34,7 @@ public class QuizFragment extends Fragment {
     private int currentQuestionCount;
     private int correctAnswersCount;
     private String correctAnswer;
+    private boolean initialised;
 
     private Quiz quiz;
 
@@ -61,6 +62,8 @@ public class QuizFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_quiz, container, false);
 
+        answerButtons.clear();
+
         questionCounterView = view.findViewById(R.id.quiz_question_number);
         questionNameView = view.findViewById(R.id.quiz_question);
         questionResultView = view.findViewById(R.id.quiz_question_result);
@@ -78,11 +81,12 @@ public class QuizFragment extends Fragment {
         answerButtons.add(answerBtn3);
         answerButtons.add(answerBtn4);
 
-        resetButton = view.findViewById(R.id.btn_quiz_reset);
+        Button resetButton = view.findViewById(R.id.btn_quiz_reset);
         resetButton.setOnClickListener(l -> startQuiz());
         nextButton = view.findViewById(R.id.btn_quiz_next);
         nextButton.setOnClickListener(nextListener);
         summaryButton = view.findViewById(R.id.btn_quiz_summary);
+        summaryButton.setOnClickListener(summaryListener);
 
         return view;
     }
@@ -150,6 +154,7 @@ public class QuizFragment extends Fragment {
             String answer = aButton.getText().toString();
 
             if (answer.equals(correctAnswer)) {
+                correctAnswersCount++;
                 questionResultView.setText(R.string.t_correct_answer);
                 questionResultView.setTextColor(ContextCompat.getColor(requireActivity(), R.color.green));
                 aButton.setBackgroundColor(ContextCompat.getColor(requireActivity(), R.color.green));
@@ -163,6 +168,7 @@ public class QuizFragment extends Fragment {
 
             disableAnswerButtons();
             nextButton.setEnabled(true);
+            summaryButton.setEnabled(true);
         }
     };
 
@@ -173,10 +179,27 @@ public class QuizFragment extends Fragment {
             if (currentQuestionCount + 1 == quiz.getQuestions().size()) {
                 button.setVisibility(View.GONE);
                 summaryButton.setVisibility(View.VISIBLE);
+                summaryButton.setEnabled(false);
             }
             if (currentQuestionCount + 1 <= quiz.getQuestions().size()) {
                 loadNextQuestion();
             }
+        }
+    };
+
+    private final OnClickListener summaryListener = new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Bundle bundle = new Bundle();
+            bundle.putInt("score", correctAnswersCount);
+            bundle.putInt("questionsCount", quiz.getQuestions().size());
+
+            requireActivity().getSupportFragmentManager()
+                    .beginTransaction()
+                    .setReorderingAllowed(true)
+                    .replace(R.id.fragment_quiz_view, QuizSummaryFragment.class, bundle, "QUIZ_SUMMARY_FRAGMENT")
+                    .addToBackStack(null)
+                    .commit();
         }
     };
 }
