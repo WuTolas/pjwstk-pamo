@@ -2,6 +2,7 @@ package com.example.pamo.lab3.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -39,7 +40,6 @@ public class QuizActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction()
                     .setReorderingAllowed(true)
                     .add(R.id.fragment_quiz_view, QuizFragment.class, bundle, "QUIZ_FRAGMENT")
-                    .addToBackStack(null)
                     .commit();
         }
 
@@ -54,6 +54,11 @@ public class QuizActivity extends AppCompatActivity {
         if (quizFragment != null) {
             quizFragment.startQuiz();
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        QuizActivity.this.finish();
     }
 
     private String loadJSONFromAssets(String fileName) {
