@@ -34,20 +34,7 @@ public class QuizFragment extends Fragment {
     private int currentQuestionCount;
     private int correctAnswersCount;
     private String correctAnswer;
-    private boolean initialised;
-
     private Quiz quiz;
-
-    public QuizFragment() {
-    }
-
-    public static QuizFragment newInstance(Quiz quiz) {
-        QuizFragment fragment = new QuizFragment();
-        Bundle args = new Bundle();
-        args.putSerializable(QUIZ_PARAM, quiz);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

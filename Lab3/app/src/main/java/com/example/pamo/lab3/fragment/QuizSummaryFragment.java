@@ -22,18 +22,6 @@ public class QuizSummaryFragment extends Fragment {
     private int score;
     private int questionsCount;
 
-    public QuizSummaryFragment() {
-    }
-
-    public static QuizSummaryFragment newInstance(int score, int questionsCount) {
-        QuizSummaryFragment fragment = new QuizSummaryFragment();
-        Bundle args = new Bundle();
-        args.putInt(SCORE_PARAM, score);
-        args.putInt(QUESTIONS_COUNT_PARAM, questionsCount);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
