@@ -15,6 +15,13 @@
         android:layout_marginRight="10dp"
         app:layout_constraintBottom_toBottomOf="parent">
 
+        <ProgressBar
+            android:id="@+id/webview_chart_loading"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal" />
+
         <org.adblockplus.libadblockplus.android.webview.AdblockWebView
             android:id="@+id/webview_chart"
             android:layout_width="match_parent"
