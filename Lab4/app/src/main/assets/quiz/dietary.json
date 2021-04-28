@@ -1,0 +1,131 @@
+{
+  "name": "Quiz dietetyczny",
+  "questions": [
+    {
+      "name": "Bilans energetyczny to",
+      "answers": [
+        {
+          "name": "liczba kilokalorii którą dostarczamy",
+          "correct": false
+        },
+        {
+          "name": "różnica między energią dostarczaną a wydatkowaną",
+          "correct": true
+        },
+        {
+          "name": "liczba kilokalorii którą wydatkujemy",
+          "correct": false
+        },
+        {
+          "name": "temperatura naszego ciała",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "name": "Strawność pokarmu zmniejsza",
+      "answers": [
+        {
+          "name": "jego rozdrobnienie",
+          "correct": false
+        },
+        {
+          "name": "spokojne, dokładne gryzienie",
+          "correct": false
+        },
+        {
+          "name": "długie smażenie",
+          "correct": true
+        },
+        {
+          "name": "gotowanie",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "name": "Najlepszym tłuszczem do smażenia jest",
+      "answers": [
+        {
+          "name": "olej kokosowy",
+          "correct": false
+        },
+        {
+          "name": "masło klarowane",
+          "correct": false
+        },
+        {
+          "name": "olej rzepakowy nierafinowany",
+          "correct": false
+        },
+        {
+          "name": "oliwa z oliwek",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "name": "Który z podanych napojów cechuje się najwyższym indeksem nawodnienia",
+      "answers": [
+        {
+          "name": "mleko",
+          "correct": true
+        },
+        {
+          "name": "woda gazowana",
+          "correct": false
+        },
+        {
+          "name": "piwo",
+          "correct": false
+        },
+        {
+          "name": "sok pomarańczowy",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "name": "Białe pieczywo dostarcza głównie",
+      "answers": [
+        {
+          "name": "cukrów prostych",
+          "correct": false
+        },
+        {
+          "name": "dwucukrów",
+          "correct": false
+        },
+        {
+          "name": "skrobi",
+          "correct": true
+        },
+        {
+          "name": "cukrów dodanych",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "name": "Przy podawaniu większych ilości węglowodanów (>60g/h) w czasie wysiłku, zaleca się",
+      "answers": [
+        {
+          "name": "łączenie źródeł glukozy i fruktozy",
+          "correct": true
+        },
+        {
+          "name": "niemieszanie glukozy i fruktozy",
+          "correct": false
+        },
+        {
+          "name": "zastosowanie inuliny (polimer fruktozy)",
+          "correct": false
+        },
+        {
+          "name": "łączenie glukozy i galaktozy",
+          "correct": false
+        }
+      ]
+    }
+  ]
+}
